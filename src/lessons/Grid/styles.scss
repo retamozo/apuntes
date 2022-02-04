@@ -1,0 +1,159 @@
+#wrapper {
+  background-color: rgb(253, 230, 230);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  width: 550px;
+}
+
+.container {
+  width: 180px;
+  height: 180px;
+  background-color: turquoise;
+}
+
+.el {
+  width: 60px;
+  height: 60px;
+  background-color: thistle;
+}
+
+.el1 {
+  background: papayawhip;
+  a:link {
+    color: hotpink;
+  }
+
+  a:visited {
+    color: tomato;
+  }
+
+  a:hover {
+    background: palegoldenrod;
+  }
+  a::before {
+    content: ":)";
+  }
+  a::after {
+    content: ":(";
+  }
+}
+
+.el2 {
+  width: 100%;
+  height: 100%;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  .circle {
+    background: lightgrey;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+  .shadow {
+    width: 100px;
+    height: 100px;
+    background: mediumaquamarine;
+    border-radius: 50%;
+  }
+  .circle:hover {
+    transform: translate(20px, -20px);
+  }
+}
+
+.el3 {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  .circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(255, 94, 247, 1) 17.8%,
+      rgba(2, 245, 255, 1) 100.2%
+    );
+  }
+  .circle:hover {
+    transform: scale(1.5);
+  }
+}
+
+.common {
+  width: 60px;
+  height: 60px;
+  margin: 60px auto;
+  border-radius: 5px;
+  background-color: rgba(255, 94, 247, 1);
+  text-align: center;
+}
+
+.el4 {
+  @extend .common;
+  &:hover {
+    transform: skew(25deg);
+  }
+}
+
+.el5 {
+  @extend .common;
+  &:hover {
+    transform: rotate(25deg);
+  }
+}
+
+.el6 {
+  @extend .common;
+  width: min-content;
+  position: relative;
+  perspective: 100px;
+  border: 3px solid black;
+  .item {
+    width: 100%;
+    height: 100%;
+    background: papayawhip;
+    transform-style: preserve-3d;
+    transform: rotateX(35deg);
+    opacity: 0.9;
+  }
+}
+
+.el7 {
+  @extend .common;
+
+  .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(255, 94, 247, 1) 17.8%,
+      rgba(2, 245, 255, 1) 100.2%
+    );
+    transform-style: preserve-3d;
+    .face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      &.front {
+        background: tomato;
+      }
+      &.back {
+        background: papayawhip;
+        transform: rotateY(180deg)
+      }
+    }
+  }
+
+  .card:hover {
+    transform: rotateY(180deg);
+  }
+}
