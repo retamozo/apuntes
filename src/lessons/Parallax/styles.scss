@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+}
+
+.parallax-container {
+  height: 100vh;
+  width: 100%;
+  perspective: 6px;
+  perspective-origin: 50%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: 0 50%; // el origen del elemento se va a centrar en el espacio disponible
+}
+
+.image__background {
+  height: auto;
+  width: 100%;
+  transform: translateZ(0px) scale(1); // el background va a ser "1" mas grande que su tam original
+  transform-origin: 0 50%;
+}
+
+.image__middle {
+  height: 100%;
+  width: 100%;
+  // el scale se calcula
+  // perspective  - translateEnZ / perpective
+  transform: translateZ(1px) scale(0.375); // el background va a ser "1" mas grande que su tam original
+  transform-origin: 50%;
+}
+
+.image__foreground {
+  transform: translateZ(3px) scale(0.75); // el background va a ser "1" mas grande que su tam original
+  transform-origin: top;
+  display: flex;
+  justify-content: center;
+  top: 50%;
+}
+.card {
+  position: absolute;
+}
+.one {
+  left: 90%;
+  top: 10%;
+  transform: translateY(10px);
+}
+
+.two {
+  top: -63%;
+}
+
+.three {
+  bottom: -150%;
+}
