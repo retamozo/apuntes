@@ -49,11 +49,5 @@ class Hashy {
   }
 }
 
-const myhashy = new Hashy(20);
 
-myhashy.set("poronga", "otra cosa");
-myhashy.set("poronga", { deep: "deepest" });
-myhashy.set("Enzo", { edad: 25 });
-console.log(myhashy.data);
-myhashy.delete("Enzo")
-console.log(myhashy.data)
+
